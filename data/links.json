@@ -1,0 +1,10 @@
+[
+  {"name": "X", "url": "#", "note": "最新のお知らせはこちら"},
+  {"name": "マシュマロ", "url": "#", "note": "メッセージ受付"},
+  {"name": "Reality", "url": "#", "note": "配信活動"},
+  {"name": "lit.link", "url": "#", "note": "まとめリンク"},
+  {"name": "note", "url": "#", "note": "文章・まとめ"},
+  {"name": "Qiita", "url": "#", "note": "技術記事"},
+  {"name": "Archiv", "url": "#", "note": "アーカイブ"},
+  {"name": "YouTube", "url": "#", "note": "動画チャンネル"}
+]
