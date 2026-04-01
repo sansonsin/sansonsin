@@ -21,6 +21,38 @@ nav a:hover {
 main {
   max-width: 900px;
 }
+.breadcrumb {
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+}
+.breadcrumb li + li::before {
+  content: ">";
+  color: #666;
+  margin-right: 0.5rem;
+}
+.breadcrumb a {
+  color: #0366d6;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+.breadcrumb [aria-current="page"] {
+  color: #555;
+  font-weight: 600;
+}
 ul {
   list-style: disc;
   padding-left: 1.5rem;
