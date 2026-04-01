@@ -18,6 +18,25 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+.site-nav a {
+  margin-right: 0;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+.site-nav a[aria-current="page"] {
+  background: #0366d6;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.site-nav a[aria-current="page"]:hover {
+  text-decoration: none;
+}
 main {
   max-width: 900px;
 }

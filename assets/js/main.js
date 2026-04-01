@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const script =
     document.currentScript ||
     document.querySelector('script[src$="assets/js/main.js"]');
+  const headerNav = document.querySelector('header nav');
 
-  if (!main || !script || main.querySelector('.breadcrumb')) {
+  if (!main || !script) {
     return;
   }
 
   const segmentLabels = {
+    top: 'TOP',
     profile: '\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb',
     reality: 'Reality',
     youtube: 'YouTube',
@@ -33,9 +35,41 @@ document.addEventListener('DOMContentLoaded', () => {
     ? currentPathname.slice(siteRootPath.length)
     : currentPathname.replace(/^\//, '');
   const segments = relativePath.split('/').filter(Boolean);
-  const breadcrumb = document.createElement('nav');
+  const breadcrumb = main.querySelector('.breadcrumb') || document.createElement('nav');
   const list = document.createElement('ol');
   let currentPath = siteRoot.href;
+  const currentSection = segments[0] || 'top';
+
+  if (headerNav) {
+    const navItems = [
+      { key: 'top', href: siteRoot.href, label: 'TOP' },
+      { key: 'profile', href: new URL('profile/', siteRoot).href, label: segmentLabels.profile },
+      { key: 'reality', href: new URL('reality/', siteRoot).href, label: segmentLabels.reality },
+      { key: 'youtube', href: new URL('youtube/', siteRoot).href, label: segmentLabels.youtube },
+      { key: 'gallery', href: new URL('gallery/', siteRoot).href, label: segmentLabels.gallery },
+      { key: 'news', href: new URL('news/', siteRoot).href, label: segmentLabels.news },
+      { key: 'links', href: new URL('links/', siteRoot).href, label: segmentLabels.links }
+    ];
+
+    headerNav.classList.add('site-nav');
+    headerNav.replaceChildren();
+
+    navItems.forEach((item) => {
+      const link = document.createElement('a');
+      link.href = item.href;
+      link.textContent = item.label;
+
+      if (item.key === currentSection) {
+        link.setAttribute('aria-current', 'page');
+      }
+
+      headerNav.appendChild(link);
+    });
+  }
+
+  if (main.querySelector('.breadcrumb')) {
+    return;
+  }
 
   breadcrumb.className = 'breadcrumb';
   breadcrumb.setAttribute('aria-label', '\u30d1\u30f3\u304f\u305a\u30ea\u30b9\u30c8');
