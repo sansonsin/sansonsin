@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     profile: '\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb',
     reality: 'Reality',
     youtube: 'YouTube',
+    minigame: 'Mini Games',
     gallery: '\u30ae\u30e3\u30e9\u30ea\u30fc',
     photos: '\u5199\u771f',
     fanart: '\u30d5\u30a1\u30f3\u30a2\u30fc\u30c8',
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'profile', href: new URL('profile/', siteRoot).href, label: segmentLabels.profile },
       { key: 'reality', href: new URL('reality/', siteRoot).href, label: segmentLabels.reality },
       { key: 'youtube', href: new URL('youtube/', siteRoot).href, label: segmentLabels.youtube },
+      { key: 'minigame', href: new URL('minigame/', siteRoot).href, label: segmentLabels.minigame },
       { key: 'gallery', href: new URL('gallery/', siteRoot).href, label: segmentLabels.gallery },
       { key: 'news', href: new URL('news/', siteRoot).href, label: segmentLabels.news },
       { key: 'links', href: new URL('links/', siteRoot).href, label: segmentLabels.links }
