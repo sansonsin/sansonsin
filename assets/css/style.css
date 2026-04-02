@@ -700,6 +700,62 @@ button:hover,
   margin: 0.35rem 0 0;
 }
 
+.catalog-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.catalog-card {
+  padding: 1.2rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), rgba(241, 243, 248, 0.88));
+  border: 1px solid rgba(215, 222, 234, 0.94);
+  box-shadow: var(--shadow);
+}
+
+.catalog-card h3 {
+  margin: 0 0 0.9rem;
+  color: var(--heading);
+}
+
+.catalog-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.catalog-entry {
+  padding: 0.95rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(215, 222, 234, 0.88);
+}
+
+.catalog-entry__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.catalog-entry__header strong {
+  color: var(--heading);
+}
+
+.catalog-entry p {
+  margin: 0.45rem 0 0;
+  color: var(--text-soft);
+}
+
+.catalog-points {
+  flex-shrink: 0;
+  padding: 0.28rem 0.68rem;
+  border-radius: 999px;
+  background: rgba(201, 137, 141, 0.14);
+  color: var(--red-muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
 .game-shell {
   padding: 1.1rem;
   background: linear-gradient(180deg, rgba(19, 27, 41, 0.96), rgba(13, 18, 31, 0.98));
