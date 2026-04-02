@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Runner | Sansonsin</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Sky Runner</h1>
+    <nav>
+      <a href="../../">TOP</a>
+      <a href="../../minigame/">Mini Games</a>
+    </nav>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>走って、跳んで、集める</h2>
+      <p>スペースキーか上矢印でジャンプ。障害物を避けて、光るコインを集めてください。</p>
+    </section>
+    <section class="game-shell">
+      <div class="hud">
+        <p id="runner-score">Score: 0</p>
+        <div class="button-row">
+          <button id="runner-start" type="button">スタート / リスタート</button>
+          <a class="choice-card" href="../" style="padding:0.65rem 1rem;">ゲーム一覧へ戻る</a>
+        </div>
+      </div>
+      <canvas id="runner-canvas" class="game-canvas" width="900" height="420"></canvas>
+      <p class="game-note" id="runner-status">スタートを押すとゲーム開始です。</p>
+    </section>
+  </main>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/runner-game.js"></script>
+</body>
+</html>

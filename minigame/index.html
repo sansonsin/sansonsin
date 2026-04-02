@@ -21,45 +21,29 @@
   </header>
   <main>
     <section class="panel">
-      <h2>Play 3 mini games</h2>
-      <p>Quick browser games you can play right on this page.</p>
+      <h2>ミニゲームを選んでスタート</h2>
+      <p>ここから3つのゲームを選べます。気になるリンクを押すと、そのままゲームページが開いてすぐ遊べます。</p>
     </section>
     <section class="game-grid">
-      <article class="panel">
-        <h2>1. Number Guess</h2>
-        <p>Guess the secret number from 1 to 20.</p>
-        <div class="button-row">
-          <input id="guess-input" type="number" min="1" max="20" />
-          <button id="guess-button" type="button">Check</button>
-          <button id="guess-reset" type="button">Reset</button>
-        </div>
-        <p class="status-text" id="guess-status"></p>
-        <p class="score-text" id="guess-count"></p>
-      </article>
-      <article class="panel">
-        <h2>2. Rock Paper Scissors</h2>
-        <p>Pick your hand and play against the computer.</p>
-        <div class="button-row">
-          <button class="rps-button" data-hand="rock" type="button">Rock</button>
-          <button class="rps-button" data-hand="paper" type="button">Paper</button>
-          <button class="rps-button" data-hand="scissors" type="button">Scissors</button>
-        </div>
-        <p class="status-text" id="rps-status"></p>
-        <p class="score-text" id="rps-score"></p>
-      </article>
-      <article class="panel">
-        <h2>3. Memory Lights</h2>
-        <p>Memorize the highlighted tiles, then click the same 3 tiles.</p>
-        <div class="button-row">
-          <button id="memory-start" type="button">Start Round</button>
-        </div>
-        <div class="memory-board" id="memory-board"></div>
-        <p class="status-text" id="memory-status"></p>
-        <p class="score-text" id="memory-score"></p>
-      </article>
+      <div class="choice-grid">
+        <a class="choice-card" href="./runner/">
+          <span class="choice-tag">Action</span>
+          <h3>Sky Runner</h3>
+          <p>ジャンプで障害物をかわしながら空のコースを走り抜けるランゲームです。</p>
+        </a>
+        <a class="choice-card" href="./tank/">
+          <span class="choice-tag">Battle</span>
+          <h3>Tank Arena</h3>
+          <p>敵タンクを撃ち抜きながら生き残る、見下ろし型のアクションシューティングです。</p>
+        </a>
+        <a class="choice-card" href="./pong/">
+          <span class="choice-tag">Arcade</span>
+          <h3>Pixel Pong</h3>
+          <p>ラリーが続くほど速くなる、1対1のピンポンゲームです。</p>
+        </a>
+      </div>
     </section>
   </main>
   <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/minigame.js"></script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Pong | Sansonsin</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Pixel Pong</h1>
+    <nav>
+      <a href="../../">TOP</a>
+      <a href="../../minigame/">Mini Games</a>
+    </nav>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>王道ピンポン対決</h2>
+      <p>上矢印と下矢印でラケットを操作。先に5点取れば勝利です。</p>
+    </section>
+    <section class="game-shell">
+      <div class="hud">
+        <p id="pong-score">Player 0 - 0 CPU</p>
+        <div class="button-row">
+          <button id="pong-start" type="button">スタート / リスタート</button>
+          <a class="choice-card" href="../" style="padding:0.65rem 1rem;">ゲーム一覧へ戻る</a>
+        </div>
+      </div>
+      <canvas id="pong-canvas" class="game-canvas" width="900" height="500"></canvas>
+      <p class="game-note" id="pong-status">スタートでサーブします。</p>
+    </section>
+  </main>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/pong-game.js"></script>
+</body>
+</html>
