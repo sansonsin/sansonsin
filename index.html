@@ -3,37 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sansonsin Webサイト</title>
+  <title>さんそん兄妹の活動記録</title>
+  <meta name="description" content="さんそん琴音とさんそんしんが運営する、配信・文章・創作のための個人活動サイトです。" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <header>
-    <h1>Sansonsin Webサイト</h1>
-    <nav>
-      <a href="profile/">自己紹介</a>
-      <a href="reality/">Reality</a>
-      <a href="youtube/">YouTube</a>
-      <a href="gallery/">ギャラリー</a>
-      <a href="news/">お知らせ</a>
-      <a href="links/">リンク集</a>
-    </nav>
+    <nav></nav>
   </header>
   <main>
-    <section>
-      <h2>準備中ページ</h2>
-      <p>以下のページはリンク共有ページの構成をもとに作成した仮ページです。</p>
-      <ul>
-        <li><a href="profile/">自己紹介</a></li>
-        <li><a href="reality/">Realityの活動</a></li>
-        <li><a href="youtube/">YouTubeの活動</a></li>
-        <li><a href="gallery/">ギャラリー</a></li>
-        <li><a href="news/">お知らせ</a></li>
-        <li><a href="links/">リンク集</a></li>
-      </ul>
+    <section class="page-hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Sibling Activity Site</span>
+          <h1>さんそん琴音とさんそんしんの、静かで見やすい活動拠点</h1>
+          <p class="lead">琴音は文章や整理を担当する、やわらかく穏やかなテキスト係。しんは配信や説明を担当する、真面目で少しポンコツな配信係。兄妹それぞれの役割が自然に伝わるように、情報を落ち着いてまとめています。</p>
+          <div class="hero-actions">
+            <a class="button" href="gallery/">ギャラリーを見る</a>
+            <a class="button secondary" href="reality/">Realityの活動を見る</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="hero-note">
+            <strong>琴音</strong>
+            <p>テキスト担当。ギャルっぽい華やかさはありつつ、実際は穏やかでしっかり者。たまに無言の筋トレ配信もします。</p>
+          </div>
+          <div class="hero-note">
+            <strong>しん</strong>
+            <p>配信担当。数学博士らしい整理力と説明力がある一方で、ちょっと抜けていて親しみやすいタイプです。</p>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <strong>3本柱</strong>
+              <span>配信・動画・創作資料</span>
+            </div>
+            <div class="metric">
+              <strong>兄妹運営</strong>
+              <span>役割が自然に分かれる設計</span>
+            </div>
+            <div class="metric">
+              <strong>見やすさ重視</strong>
+              <span>スマホでも読みやすい余白設計</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section>
-      <h2>データ</h2>
-      <p>仮置きのJSONデータは <code>data/</code> フォルダにあります。</p>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <div>
+          <h2>まず見てほしいページ</h2>
+          <p>初見でも迷いにくいように、主要コンテンツを入口として並べています。</p>
+        </div>
+      </div>
+      <div class="card-grid three">
+        <article class="page-card">
+          <span class="card-kicker">配信</span>
+          <h3>Reality</h3>
+          <p>しん中心の配信の空気感と、琴音の静かな配信スタイルをまとめています。どんな雰囲気で見られるのかを先に確認できます。</p>
+          <div class="hero-actions">
+            <a class="button secondary" href="reality/">活動紹介へ</a>
+          </div>
+        </article>
+        <article class="page-card">
+          <span class="card-kicker">動画</span>
+          <h3>YouTube</h3>
+          <p>動画側で見せたい内容や更新方針を整理しました。配信の延長だけでなく、見返しやすい導線にしています。</p>
+          <div class="hero-actions">
+            <a class="button secondary" href="youtube/">動画紹介へ</a>
+          </div>
+        </article>
+        <article class="page-card">
+          <span class="card-kicker">創作</span>
+          <h3>ギャラリー</h3>
+          <p>写真、ファンアート、資料集をまとめた創作入口です。世界観を深掘りしたい人に最初に見てほしいページです。</p>
+          <div class="hero-actions">
+            <a class="button secondary" href="gallery/">ギャラリーへ</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <div>
+          <h2>兄妹の役割</h2>
+          <p>ふたりで運営していることが、説明しなくても何となく伝わるように整理しています。</p>
+        </div>
+      </div>
+      <div class="card-grid two">
+        <article class="page-card duo-card">
+          <span class="card-kicker">琴音の担当</span>
+          <h3>言葉を整えて、空気を整える</h3>
+          <p>文章、案内、情報整理、雰囲気づくりを担当。派手すぎず、でも親しみやすく見えるバランスを作るのが得意です。</p>
+        </article>
+        <article class="page-card duo-card">
+          <span class="card-kicker">しんの担当</span>
+          <h3>配信の軸を作って、説明を届ける</h3>
+          <p>Realityや動画まわりの主担当。知的でまじめなのに、少し抜けているところもあり、親しみやすい配信の雰囲気につながっています。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <div>
+          <h2>サイトの使い方</h2>
+          <p>目的別にたどりやすい順番で案内しています。</p>
+        </div>
+      </div>
+      <ul class="page-list">
+        <li><strong>全体像を知りたい</strong><br />このページと自己紹介から見ると、兄妹それぞれの役割が自然につかめます。</li>
+        <li><strong>配信を追いたい</strong><br /><a href="reality/">Reality</a> で配信の雰囲気を確認し、<a href="links/">リンク集</a> から各サービスに移動できます。</li>
+        <li><strong>作品や資料を見たい</strong><br /><a href="gallery/">ギャラリー</a> に写真・ファンアート・資料集の入口をまとめています。</li>
+      </ul>
     </section>
   </main>
   <script src="assets/js/main.js"></script>

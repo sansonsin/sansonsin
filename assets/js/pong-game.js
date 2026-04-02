@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.querySelector('#pong-canvas');
   const button = document.querySelector('#pong-start');
+  const touchButtons = document.querySelectorAll('[data-pong]');
   const scoreText = document.querySelector('#pong-score');
   const statusText = document.querySelector('#pong-status');
 
@@ -153,6 +154,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   button.addEventListener('click', resetGame);
+  touchButtons.forEach((control) => {
+    const key = control.getAttribute('data-pong') === 'up' ? 'ArrowUp' : 'ArrowDown';
+    control.addEventListener('pointerdown', () => {
+      keys.add(key);
+    });
+    const clear = () => {
+      keys.delete(key);
+    };
+    control.addEventListener('pointerup', clear);
+    control.addEventListener('pointerleave', clear);
+    control.addEventListener('pointercancel', clear);
+  });
   window.addEventListener('keydown', (event) => {
     if (event.code === 'ArrowUp' || event.code === 'ArrowDown') {
       keys.add(event.code);

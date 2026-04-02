@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.querySelector('#tank-canvas');
   const button = document.querySelector('#tank-start');
+  const touchButtons = document.querySelectorAll('[data-action]');
   const scoreText = document.querySelector('#tank-score');
   const statusText = document.querySelector('#tank-status');
 
@@ -211,6 +212,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   button.addEventListener('click', resetGame);
+  touchButtons.forEach((control) => {
+    const action = control.getAttribute('data-action');
+
+    if (action === 'fire') {
+      control.addEventListener('click', fire);
+      return;
+    }
+
+    control.addEventListener('pointerdown', () => {
+      keys.add(`Arrow${action.charAt(0).toUpperCase()}${action.slice(1)}`);
+    });
+
+    const clear = () => {
+      keys.delete(`Arrow${action.charAt(0).toUpperCase()}${action.slice(1)}`);
+    };
+
+    control.addEventListener('pointerup', clear);
+    control.addEventListener('pointerleave', clear);
+    control.addEventListener('pointercancel', clear);
+  });
   window.addEventListener('keydown', (event) => {
     if (event.code.startsWith('Arrow')) {
       keys.add(event.code);

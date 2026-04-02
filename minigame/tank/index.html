@@ -3,32 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tank Arena | Sansonsin</title>
+  <title>Tank Arena | さんそん兄妹の活動記録</title>
+  <meta name="description" content="敵タンクを撃ち返すアクションゲームです。" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
 <body>
   <header>
-    <h1>Tank Arena</h1>
-    <nav>
-      <a href="../../">TOP</a>
-      <a href="../../minigame/">Mini Games</a>
-    </nav>
+    <nav></nav>
   </header>
   <main>
-    <section class="panel">
-      <h2>敵タンクを迎え撃つ</h2>
-      <p>矢印キーで移動、スペースキーで発射。被弾を避けながらスコアを伸ばしてください。</p>
+    <section class="page-hero">
+      <span class="eyebrow">Tank Arena</span>
+      <h1>避けて撃つ、見下ろし型タンクバトル</h1>
+      <p class="lead">矢印キーで移動、スペースキーで発射。スマホではスタート後に画面タップで攻撃できます。被弾を避けながらスコアを伸ばしてください。</p>
     </section>
-    <section class="game-shell">
+    <section class="page-section game-shell">
       <div class="hud">
         <p id="tank-score">Score: 0 / HP: 5</p>
         <div class="button-row">
           <button id="tank-start" type="button">スタート / リスタート</button>
-          <a class="choice-card" href="../" style="padding:0.65rem 1rem;">ゲーム一覧へ戻る</a>
+          <a class="button-link secondary" href="../">ゲーム一覧へ戻る</a>
         </div>
       </div>
       <canvas id="tank-canvas" class="game-canvas" width="900" height="520"></canvas>
-      <p class="game-note" id="tank-status">スタートで戦闘開始です。</p>
+      <div class="touch-controls five">
+        <button data-action="up" type="button">上</button>
+        <button data-action="down" type="button">下</button>
+        <button data-action="left" type="button">左</button>
+        <button data-action="right" type="button">右</button>
+        <button data-action="fire" type="button">発射</button>
+      </div>
+      <p class="game-note" id="tank-status">ゲームを準備しています。</p>
     </section>
   </main>
   <script src="../../assets/js/main.js"></script>

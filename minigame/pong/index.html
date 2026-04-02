@@ -3,32 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pixel Pong | Sansonsin</title>
+  <title>Pixel Pong | さんそん兄妹の活動記録</title>
+  <meta name="description" content="シンプルに遊べるピンポンゲームです。" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
 <body>
   <header>
-    <h1>Pixel Pong</h1>
-    <nav>
-      <a href="../../">TOP</a>
-      <a href="../../minigame/">Mini Games</a>
-    </nav>
+    <nav></nav>
   </header>
   <main>
-    <section class="panel">
-      <h2>王道ピンポン対決</h2>
-      <p>上矢印と下矢印でラケットを操作。先に5点取れば勝利です。</p>
+    <section class="page-hero">
+      <span class="eyebrow">Pixel Pong</span>
+      <h1>シンプルで気持ちいい、王道ピンポンゲーム</h1>
+      <p class="lead">上矢印と下矢印でラケットを動かし、CPUより先に5点を取ると勝利です。テンポよく遊べるよう、すぐ再戦できる作りにしています。</p>
     </section>
-    <section class="game-shell">
+    <section class="page-section game-shell">
       <div class="hud">
         <p id="pong-score">Player 0 - 0 CPU</p>
         <div class="button-row">
           <button id="pong-start" type="button">スタート / リスタート</button>
-          <a class="choice-card" href="../" style="padding:0.65rem 1rem;">ゲーム一覧へ戻る</a>
+          <a class="button-link secondary" href="../">ゲーム一覧へ戻る</a>
         </div>
       </div>
       <canvas id="pong-canvas" class="game-canvas" width="900" height="500"></canvas>
-      <p class="game-note" id="pong-status">スタートでサーブします。</p>
+      <div class="touch-controls two">
+        <button data-pong="up" type="button">上へ</button>
+        <button data-pong="down" type="button">下へ</button>
+      </div>
+      <p class="game-note" id="pong-status">ゲームを準備しています。</p>
     </section>
   </main>
   <script src="../../assets/js/main.js"></script>

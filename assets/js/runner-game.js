@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.querySelector('#runner-canvas');
   const button = document.querySelector('#runner-start');
+  const mobileRestart = document.querySelector('#runner-restart-mobile');
+  const jumpButton = document.querySelector('#runner-jump');
   const scoreText = document.querySelector('#runner-score');
   const statusText = document.querySelector('#runner-status');
 
@@ -202,6 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   button.addEventListener('click', resetGame);
+  mobileRestart?.addEventListener('click', resetGame);
+  jumpButton?.addEventListener('click', jump);
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Space' || event.code === 'ArrowUp') {
       event.preventDefault();
