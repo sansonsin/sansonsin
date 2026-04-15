@@ -725,12 +725,22 @@ button:hover,
 
 .link-service__head {
   display: grid;
-  gap: 0.48rem;
+  grid-template-rows: auto auto;
+  gap: 0.4rem;
+  align-content: center;
   grid-column: 1;
   min-width: 0;
 }
 
 .link-service__head .link-note {
+  display: block;
+  min-height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--red-muted);
+  font-size: 0.78rem;
+  line-height: 1.1;
   justify-self: start;
 }
 
