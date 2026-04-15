@@ -724,16 +724,25 @@ button:hover,
 }
 
 .link-service__head {
+  display: grid;
+  gap: 0.48rem;
+  grid-column: 1;
+  min-width: 0;
+}
+
+.link-service__head .link-note {
+  justify-self: start;
+}
+
+.link-service__identity {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  grid-column: 1;
   min-width: 0;
 }
 
 .link-service__head strong {
   display: block;
-  margin-top: 0.2rem;
   color: var(--heading);
   font-size: 1rem;
   line-height: 1.35;
