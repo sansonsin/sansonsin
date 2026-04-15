@@ -733,11 +733,11 @@ button:hover,
 }
 
 .link-service__head .link-note {
-  display: block;
-  min-height: auto;
-  padding: 0;
-  border-radius: 0;
-  background: none;
+  display: inline-flex;
+  min-height: 24px;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  background: linear-gradient(145deg, rgba(201, 137, 141, 0.16), rgba(154, 142, 201, 0.14));
   color: var(--red-muted);
   font-size: 0.78rem;
   line-height: 1.1;
