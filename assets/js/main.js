@@ -188,6 +188,22 @@ const headerDescriptions = {
     button.dataset.copyLabel = button.getAttribute('aria-label') || '\u30ea\u30f3\u30af\u3092\u30b3\u30d4\u30fc';
   });
 
+  document.querySelectorAll('.link-card--service').forEach((card) => {
+    const mainLink = card.querySelector('.link-service__main');
+
+    if (!mainLink) {
+      return;
+    }
+
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('.copy-link-button') || event.target.closest('a')) {
+        return;
+      }
+
+      window.open(mainLink.href, mainLink.target || '_self', 'noopener');
+    });
+  });
+
   document.body.dataset.section = currentSection;
   document.body.dataset.page = pageKey;
 });
