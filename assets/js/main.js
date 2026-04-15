@@ -77,7 +77,7 @@ const headerDescriptions = {
   brand.href = siteRoot.href;
   brand.innerHTML = `
     <span class="site-brand__mark" aria-hidden="true">
-      <span class="site-brand__core"></span>
+      <img class="site-brand__icon" src="${new URL('favicon.ico', siteRoot).href}" alt="" />
     </span>
     <span class="site-brand__text">
       <span class="site-brand__title">\u3055\u3093\u305d\u3093\u5144\u59b9\u306e\u6d3b\u52d5\u8a18\u9332</span>
