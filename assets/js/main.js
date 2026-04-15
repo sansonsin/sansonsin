@@ -170,16 +170,22 @@ const headerDescriptions = {
 
       const copied = await copyText(url);
       if (!copied) {
+        showCopyToast('\u30b3\u30d4\u30fc\u3067\u304d\u307e\u305b\u3093\u3067\u3057\u305f');
         return;
       }
 
       button.textContent = '\u2713';
+      button.setAttribute('aria-label', '\u30ea\u30f3\u30af\u3092\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f');
       button.classList.add('is-copied');
+      showCopyToast('\u30ea\u30f3\u30af\u3092\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f');
       window.setTimeout(() => {
         button.textContent = defaultLabel;
+        button.setAttribute('aria-label', button.dataset.copyLabel || '\u30ea\u30f3\u30af\u3092\u30b3\u30d4\u30fc');
         button.classList.remove('is-copied');
       }, 1300);
     });
+
+    button.dataset.copyLabel = button.getAttribute('aria-label') || '\u30ea\u30f3\u30af\u3092\u30b3\u30d4\u30fc';
   });
 
   document.body.dataset.section = currentSection;
@@ -214,18 +220,46 @@ async function copyText(text) {
     }
   }
 
+  return fallbackCopyText(text);
+}
+
+function fallbackCopyText(text) {
   const textarea = document.createElement('textarea');
   textarea.value = text;
   textarea.setAttribute('readonly', '');
   textarea.style.position = 'fixed';
-  textarea.style.inset = '0 auto auto 0';
+  textarea.style.top = '0';
+  textarea.style.left = '0';
+  textarea.style.width = '1px';
+  textarea.style.height = '1px';
   textarea.style.opacity = '0';
   document.body.appendChild(textarea);
+  textarea.focus();
   textarea.select();
+  textarea.setSelectionRange(0, textarea.value.length);
 
   try {
     return document.execCommand('copy');
   } finally {
     textarea.remove();
   }
+}
+
+function showCopyToast(message) {
+  let toast = document.querySelector('.copy-toast');
+
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'copy-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    document.body.appendChild(toast);
+  }
+
+  toast.textContent = message;
+  toast.classList.add('is-visible');
+  window.clearTimeout(showCopyToast.timer);
+  showCopyToast.timer = window.setTimeout(() => {
+    toast.classList.remove('is-visible');
+  }, 1500);
 }
