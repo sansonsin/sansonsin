@@ -156,6 +156,32 @@ const headerDescriptions = {
     document.body.appendChild(footer);
   }
 
+  document.querySelectorAll('.copy-link-button').forEach((button) => {
+    const defaultLabel = button.textContent;
+
+    button.addEventListener('click', async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const url = button.dataset.copyUrl;
+      if (!url) {
+        return;
+      }
+
+      const copied = await copyText(url);
+      if (!copied) {
+        return;
+      }
+
+      button.textContent = '\u2713';
+      button.classList.add('is-copied');
+      window.setTimeout(() => {
+        button.textContent = defaultLabel;
+        button.classList.remove('is-copied');
+      }, 1300);
+    });
+  });
+
   document.body.dataset.section = currentSection;
   document.body.dataset.page = pageKey;
 });
@@ -176,4 +202,30 @@ function appendCrumb(list, label, href, isCurrent) {
   }
 
   list.appendChild(item);
+}
+
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (error) {
+      // Fall through to the textarea fallback for older or restricted browsers.
+    }
+  }
+
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.inset = '0 auto auto 0';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.select();
+
+  try {
+    return document.execCommand('copy');
+  } finally {
+    textarea.remove();
+  }
 }
