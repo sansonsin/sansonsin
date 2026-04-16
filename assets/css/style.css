@@ -208,9 +208,17 @@ button {
 
 .site-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.65rem;
   align-items: center;
+  min-width: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.site-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .site-nav a {
@@ -1144,7 +1152,7 @@ body[data-section="support"] .page-hero {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   body.nav-open {
     overflow: hidden;
   }
