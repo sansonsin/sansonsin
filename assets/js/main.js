@@ -102,6 +102,20 @@ const headerDescriptions = {
   navBackdrop.className = 'site-nav-backdrop';
   navBackdrop.setAttribute('aria-label', '\u30e1\u30cb\u30e5\u30fc\u3092\u9589\u3058\u308b');
 
+  const navScrollPrev = document.createElement('button');
+  navScrollPrev.type = 'button';
+  navScrollPrev.className = 'site-nav-scroll site-nav-scroll--prev';
+  navScrollPrev.setAttribute('aria-label', '\u524d\u306e\u30bf\u30d6\u3092\u8868\u793a');
+  navScrollPrev.hidden = true;
+  navScrollPrev.textContent = '\u2039';
+
+  const navScrollNext = document.createElement('button');
+  navScrollNext.type = 'button';
+  navScrollNext.className = 'site-nav-scroll site-nav-scroll--next';
+  navScrollNext.setAttribute('aria-label', '\u6b21\u306e\u30bf\u30d6\u3092\u8868\u793a');
+  navScrollNext.hidden = true;
+  navScrollNext.textContent = '\u203a';
+
   headerNav.id = 'global-nav';
   headerNav.classList.add('site-nav');
   headerNav.replaceChildren();
@@ -144,10 +158,36 @@ const headerDescriptions = {
     }
   });
 
-  shell.append(brand, menuButton, navBackdrop, headerNav);
+  const updateNavScrollButtons = () => {
+    const maxScroll = headerNav.scrollWidth - headerNav.clientWidth;
+    const canScroll = maxScroll > 4;
+    navScrollPrev.hidden = !canScroll || headerNav.scrollLeft <= 4;
+    navScrollNext.hidden = !canScroll || headerNav.scrollLeft >= maxScroll - 4;
+  };
+
+  const scrollNavByPage = (direction) => {
+    headerNav.scrollBy({
+      left: direction * Math.max(180, Math.round(headerNav.clientWidth * 0.72)),
+      behavior: 'smooth'
+    });
+  };
+
+  navScrollPrev.addEventListener('click', () => {
+    scrollNavByPage(-1);
+  });
+
+  navScrollNext.addEventListener('click', () => {
+    scrollNavByPage(1);
+  });
+
+  headerNav.addEventListener('scroll', updateNavScrollButtons, { passive: true });
+  window.addEventListener('resize', updateNavScrollButtons);
+  window.setTimeout(updateNavScrollButtons, 0);
+
+  shell.append(brand, menuButton, navBackdrop, headerNav, navScrollPrev, navScrollNext);
   header.replaceChildren(shell);
 
-  if (!main.querySelector('.breadcrumb')) {
+  if (segments.length > 0 && !main.querySelector('.breadcrumb')) {
     const breadcrumb = document.createElement('nav');
     const list = document.createElement('ol');
     let currentPath = siteRoot.href;
