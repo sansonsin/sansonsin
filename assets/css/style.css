@@ -1188,6 +1188,14 @@ body[data-section="support"] .page-hero {
     padding: 0;
     position: relative;
     z-index: 42;
+    background: var(--surface-strong);
+    color: var(--heading);
+  }
+
+  .site-menu-button:hover,
+  .site-menu-button:focus-visible {
+    background: var(--surface-strong);
+    color: var(--heading);
   }
 
   .site-menu-button__line {
@@ -1202,6 +1210,12 @@ body[data-section="support"] .page-hero {
     background: linear-gradient(145deg, rgba(106, 125, 148, 0.98), rgba(154, 142, 201, 0.88));
     color: #fff;
     box-shadow: 0 12px 28px rgba(79, 97, 119, 0.26);
+  }
+
+  .site-menu-button[aria-expanded="true"]:hover,
+  .site-menu-button[aria-expanded="true"]:focus-visible {
+    background: linear-gradient(145deg, rgba(106, 125, 148, 0.98), rgba(154, 142, 201, 0.88));
+    color: #fff;
   }
 
   .site-menu-button[aria-expanded="true"] .site-menu-button__line:nth-child(1) {
