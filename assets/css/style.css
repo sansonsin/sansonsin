@@ -271,12 +271,14 @@ button {
     font-size: 1.35rem;
     font-weight: 700;
     transform: translateY(-50%);
+    transition: opacity 0.16s ease, background-color 0.16s ease, color 0.16s ease;
   }
 
   .site-nav-scroll:hover,
   .site-nav-scroll:focus-visible {
     background: #fff;
     color: var(--heading);
+    transform: translateY(-50%);
   }
 
   .site-nav-scroll[hidden] {
