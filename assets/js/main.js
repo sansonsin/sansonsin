@@ -118,7 +118,7 @@ const headerDescriptions = {
     document.body.classList.toggle('nav-open', isOpen);
     menuButton.setAttribute('aria-expanded', String(isOpen));
     menuButton.setAttribute('aria-label', isOpen ? '\u30e1\u30cb\u30e5\u30fc\u3092\u9589\u3058\u308b' : '\u30e1\u30cb\u30e5\u30fc\u3092\u958b\u304f');
-    menuButton.textContent = isOpen ? '\u00d7' : '\u2630';
+    menuButton.textContent = '\u2630';
   };
 
   menuButton.addEventListener('click', () => {

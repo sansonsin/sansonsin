@@ -1183,6 +1183,12 @@ body[data-section="support"] .page-hero {
     z-index: 42;
   }
 
+  .site-menu-button[aria-expanded="true"] {
+    background: linear-gradient(145deg, rgba(106, 125, 148, 0.98), rgba(154, 142, 201, 0.88));
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(79, 97, 119, 0.26);
+  }
+
   .site-nav {
     position: fixed;
     inset: 0 auto 0 0;
