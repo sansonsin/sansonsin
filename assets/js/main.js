@@ -91,7 +91,11 @@ const headerDescriptions = {
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-controls', 'global-nav');
   menuButton.setAttribute('aria-label', '\u30e1\u30cb\u30e5\u30fc\u3092\u958b\u304f');
-  menuButton.textContent = '\u2630';
+  menuButton.innerHTML = `
+    <span class="site-menu-button__line"></span>
+    <span class="site-menu-button__line"></span>
+    <span class="site-menu-button__line"></span>
+  `;
 
   const navBackdrop = document.createElement('button');
   navBackdrop.type = 'button';
@@ -118,7 +122,6 @@ const headerDescriptions = {
     document.body.classList.toggle('nav-open', isOpen);
     menuButton.setAttribute('aria-expanded', String(isOpen));
     menuButton.setAttribute('aria-label', isOpen ? '\u30e1\u30cb\u30e5\u30fc\u3092\u9589\u3058\u308b' : '\u30e1\u30cb\u30e5\u30fc\u3092\u958b\u304f');
-    menuButton.textContent = '\u2630';
   };
 
   menuButton.addEventListener('click', () => {

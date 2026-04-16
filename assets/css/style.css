@@ -86,6 +86,13 @@ button {
   cursor: pointer;
 }
 
+html,
+body,
+a,
+button {
+  touch-action: manipulation;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -1173,20 +1180,40 @@ body[data-section="support"] .page-hero {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 5px;
     width: 44px;
     min-height: 44px;
     margin-left: auto;
     padding: 0;
-    font-size: 1.35rem;
-    line-height: 1;
     position: relative;
     z-index: 42;
+  }
+
+  .site-menu-button__line {
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
   .site-menu-button[aria-expanded="true"] {
     background: linear-gradient(145deg, rgba(106, 125, 148, 0.98), rgba(154, 142, 201, 0.88));
     color: #fff;
     box-shadow: 0 12px 28px rgba(79, 97, 119, 0.26);
+  }
+
+  .site-menu-button[aria-expanded="true"] .site-menu-button__line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .site-menu-button[aria-expanded="true"] .site-menu-button__line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-menu-button[aria-expanded="true"] .site-menu-button__line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .site-nav {
