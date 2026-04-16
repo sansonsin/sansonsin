@@ -112,6 +112,7 @@ button {
 }
 
 .site-shell {
+  position: relative;
   width: min(1280px, calc(100vw - 32px)); /* やや広め */
   margin: 0 auto;
   display: flex;
@@ -243,6 +244,31 @@ button {
   color: #fff;
   font-weight: 700;
   box-shadow: 0 10px 24px rgba(79, 97, 119, 0.22);
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+  .site-nav {
+    padding-right: 3rem;
+  }
+
+  .site-shell::after {
+    content: "\203A";
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 3.4rem;
+    height: 3.2rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(246, 245, 244, 0), rgba(246, 245, 244, 0.92) 46%, rgba(255, 255, 255, 0.98));
+    color: var(--brand-deep);
+    font-size: 1.45rem;
+    font-weight: 700;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
 }
 
 .page-main {
