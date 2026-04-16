@@ -90,7 +90,13 @@ const headerDescriptions = {
   menuButton.className = 'site-menu-button';
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-controls', 'global-nav');
-  menuButton.textContent = '\u30e1\u30cb\u30e5\u30fc';
+  menuButton.setAttribute('aria-label', '\u30e1\u30cb\u30e5\u30fc\u3092\u958b\u304f');
+  menuButton.textContent = '\u2630';
+
+  const navBackdrop = document.createElement('button');
+  navBackdrop.type = 'button';
+  navBackdrop.className = 'site-nav-backdrop';
+  navBackdrop.setAttribute('aria-label', '\u30e1\u30cb\u30e5\u30fc\u3092\u9589\u3058\u308b');
 
   headerNav.id = 'global-nav';
   headerNav.classList.add('site-nav');
@@ -106,12 +112,36 @@ const headerDescriptions = {
     headerNav.appendChild(link);
   });
 
-  menuButton.addEventListener('click', () => {
-    const isOpen = headerNav.classList.toggle('is-open');
+  const setMenuOpen = (isOpen) => {
+    headerNav.classList.toggle('is-open', isOpen);
+    navBackdrop.classList.toggle('is-open', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
     menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? '\u30e1\u30cb\u30e5\u30fc\u3092\u9589\u3058\u308b' : '\u30e1\u30cb\u30e5\u30fc\u3092\u958b\u304f');
+    menuButton.textContent = isOpen ? '\u00d7' : '\u2630';
+  };
+
+  menuButton.addEventListener('click', () => {
+    setMenuOpen(!headerNav.classList.contains('is-open'));
   });
 
-  shell.append(brand, menuButton, headerNav);
+  navBackdrop.addEventListener('click', () => {
+    setMenuOpen(false);
+  });
+
+  headerNav.addEventListener('click', (event) => {
+    if (event.target.closest('a')) {
+      setMenuOpen(false);
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setMenuOpen(false);
+    }
+  });
+
+  shell.append(brand, menuButton, navBackdrop, headerNav);
   header.replaceChildren(shell);
 
   if (!main.querySelector('.breadcrumb')) {
