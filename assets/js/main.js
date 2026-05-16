@@ -80,7 +80,7 @@ const headerDescriptions = {
       <img class="site-brand__icon" src="${new URL('favicon.ico', siteRoot).href}" alt="" />
     </span>
     <span class="site-brand__text">
-      <span class="site-brand__title">\u3055\u3093\u305d\u3093\u5144\u59b9\u306e\u6d3b\u52d5\u8a18\u9332</span>
+      <span class="site-brand__title">Sanson Activity Journal</span>
       <span class="site-brand__sub">${headerDescriptions[currentSection] || '\u9759\u304b\u306a\u914d\u4fe1\u3068\u5275\u4f5c\u306e\u305f\u3081\u306e\u30b5\u30a4\u30c8'}</span>
     </span>
   `;
