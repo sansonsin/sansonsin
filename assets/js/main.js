@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     profile: '\u3055\u3093\u305d\u3093\u306e\u7d39\u4ecb',
     reality: '\u6d3b\u52d5\u7d39\u4ecb',
     journey: '\u6d3b\u52d5\u5e74\u8868',
-    youtube: 'YouTube',
     support: '\u30b5\u30dd\u8fd4',
     minigame: '\u30df\u30cb\u30b2\u30fc\u30e0',
     runner: 'Sky Runner',
@@ -24,21 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
     gallery: '\u30ae\u30e3\u30e9\u30ea\u30fc',
     photos: '\u5199\u771f',
     fanart: '\u30d5\u30a1\u30f3\u30a2\u30fc\u30c8',
-    docs: '\u8cc7\u6599\u96c6',
-    news: '\u304a\u77e5\u3089\u305b',
-    links: '\u30ea\u30f3\u30af\u96c6'
+    docs: '\u8cc7\u6599\u96c6'
   };
 
 const headerDescriptions = {
   profile: 'Profile',
   reality: 'Activities',
   journey: 'Journey',
-  youtube: '\u52d5\u753b\u6d3b\u52d5\u306e\u6848\u5185',
   support: 'Rewards',
   minigame: 'Mini Game',
-  gallery: 'Gallery',
-  news: '\u66f4\u65b0\u60c5\u5831\u307e\u3068\u3081',
-  links: '\u5916\u90e8\u30ea\u30f3\u30af\u4e00\u89a7'
+  gallery: 'Gallery'
 };
 
   const scriptUrl = new URL(script.getAttribute('src'), window.location.href);
