@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const pointsRoot = document.querySelector('#support-points');
   const catalogRoot = document.querySelector('#support-catalog');
+  const categories = {
+    points: '\u30dd\u30a4\u30f3\u30c8\u7372\u5f97\u65b9\u6cd5',
+    catalog: '\u30b5\u30dd\u8fd4\u3057\u30ab\u30bf\u30ed\u30b0'
+  };
 
   if (!pointsRoot || !catalogRoot) {
     return;
@@ -11,8 +15,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const csv = await response.text();
     const rows = parseCsv(csv);
 
-    const pointRows = rows.filter((row) => row.category === '\u30dd\u30a4\u30f3\u30c8\u7372\u5f97\u65b9\u6cd5');
-    const catalogRows = rows.filter((row) => row.category === '\u30b5\u30dd\u8fd4\u3057\u30ab\u30bf\u30ed\u30b0');
+    const pointRows = rows.filter((row) => row.category === categories.points);
+    const catalogRows = rows.filter((row) => row.category === categories.catalog);
 
     renderGroups(pointsRoot, pointRows, true);
     renderGroups(catalogRoot, catalogRows, false);
@@ -40,6 +44,11 @@ function parseCsv(csv) {
 
 function renderGroups(root, rows, compact) {
   const groupMap = new Map();
+
+  if (rows.length === 0) {
+    root.innerHTML = '<article class="page-card"><h3>\u8868\u793a\u3067\u304d\u308b\u9805\u76ee\u304c\u307e\u3060\u3042\u308a\u307e\u305b\u3093</h3><p>\u65b0\u30d0\u30fc\u30b8\u30e7\u30f3\u306eCSV\u306b\u9805\u76ee\u3092\u8ffd\u52a0\u3059\u308b\u3068\u3001\u3053\u3053\u306b\u8868\u793a\u3055\u308c\u307e\u3059\u3002</p></article>';
+    return;
+  }
 
   rows.forEach((row) => {
     const key = row.subcategory || '\u305d\u306e\u4ed6';

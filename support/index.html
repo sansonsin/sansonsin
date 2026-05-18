@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>サポ返 | さんそんの活動記録</title>
-  <meta name="description" content="ポイント獲得方法とサポ返しカタログをまとめたページです。" />
+  <meta name="description" content="サポ返のポイント獲得方法、交換メニュー、注意事項をまとめたページです。" />
   <link rel="icon" href="../favicon.ico?v=1" type="image/x-icon" />
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
@@ -15,28 +15,70 @@
   <main>
     <section class="page-hero">
       <span class="eyebrow">Rewards</span>
-      <h1>ポイントとサポ返内容を一覧で確認</h1>
-      <p class="lead">ポイントの獲得方法と、交換できるサポ返し内容をカテゴリごとにまとめています。</p>
+      <h1>サポ返</h1>
+      <p class="lead">ポイントの集め方、交換できる内容、注意事項を整理しています。新バージョンの内容に差し替えやすいよう、カテゴリごとの枠に分けています。</p>
     </section>
 
     <section class="page-section">
+      <div class="card-grid three">
+        <article class="page-card">
+          <span class="card-kicker">Step 1</span>
+          <h3>ポイントを集める</h3>
+          <p>レベルアップやチケット、制作協力などでポイントを獲得します。</p>
+        </article>
+        <article class="page-card">
+          <span class="card-kicker">Step 2</span>
+          <h3>メニューを選ぶ</h3>
+          <p>必要ポイント、称号、注意事項を見ながらサポ返を選びます。</p>
+        </article>
+        <article class="page-card">
+          <span class="card-kicker">Step 3</span>
+          <h3>内容を確認する</h3>
+          <p>実施条件や回数制限があるものは、交換前に確認できるようにします。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <article class="panel reward-version-panel">
+        <span class="card-kicker">Rewards Update</span>
+        <h2>新バージョン用の構成</h2>
+        <p>このページは、CSVの内容を差し替えるだけで「ポイント獲得方法」と「サポ返しカタログ」を更新できる構成です。大きな説明やルールは、このページ上部のカードや注意事項に追加できます。</p>
+      </article>
+    </section>
+
+    <section class="page-section" id="reward-points">
       <div class="section-heading">
         <div>
           <h2>ポイント獲得方法</h2>
           <p>レベルアップやそのほかの貢献で得られるポイントです。</p>
         </div>
       </div>
-      <div id="support-points" class="catalog-grid"></div>
+      <div id="support-points" class="catalog-grid" data-support-section="points"></div>
     </section>
 
-    <section class="page-section">
+    <section class="page-section" id="reward-catalog">
       <div class="section-heading">
         <div>
           <h2>サポ返しカタログ</h2>
           <p>必要ポイント、称号、注意事項をカテゴリごとに確認できます。</p>
         </div>
       </div>
-      <div id="support-catalog" class="catalog-grid"></div>
+      <div id="support-catalog" class="catalog-grid" data-support-section="catalog"></div>
+    </section>
+
+    <section class="page-section" id="reward-notes">
+      <div class="section-heading">
+        <div>
+          <h2>注意事項</h2>
+          <p>新バージョンでルールを追加するための固定枠です。</p>
+        </div>
+      </div>
+      <ul class="page-list reward-note-list">
+        <li><strong>内容は調整される場合があります</strong><br />活動状況や実施しやすさに合わせて、必要ポイントや条件を見直すことがあります。</li>
+        <li><strong>実施が難しいものは相談になります</strong><br />シリーズ物、長時間の内容、確認が必要なものは個別に相談して決めます。</li>
+        <li><strong>最新情報を優先します</strong><br />今後の新バージョンでは、このページの表示内容を最新のサポ返ルールとして扱います。</li>
+      </ul>
     </section>
   </main>
   <script src="../assets/js/main.js"></script>
