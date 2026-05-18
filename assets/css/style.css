@@ -661,6 +661,41 @@ button:hover,
   font-weight: 700;
 }
 
+.journey-list {
+  position: relative;
+}
+
+.journey-list::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 1.15rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--sky), var(--violet), var(--pink));
+  opacity: 0.45;
+}
+
+.journey-item {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.journey-item::before {
+  content: "";
+  position: absolute;
+  left: 0.7rem;
+  top: 1.25rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 999px;
+  background: var(--surface-strong);
+  border: 3px solid var(--brand-deep);
+  box-shadow: 0 0 0 5px rgba(143, 183, 216, 0.18);
+}
+
+.journey-item .choice-tag {
+  margin: 0 0.65rem 0.35rem 0;
+}
+
 .gallery-grid a,
 .choice-card,
 .link-card {

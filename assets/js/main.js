@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const labels = {
     top: 'TOP',
-    profile: '\u81ea\u5df1\u7d39\u4ecb',
-    reality: 'REALITY',
+    profile: '\u3055\u3093\u305d\u3093\u306e\u7d39\u4ecb',
+    reality: '\u6d3b\u52d5\u7d39\u4ecb',
+    journey: '\u6d3b\u52d5\u5e74\u8868',
     youtube: 'YouTube',
     support: '\u30b5\u30dd\u8fd4',
-    minigame: 'Mini Games',
+    minigame: '\u30df\u30cb\u30b2\u30fc\u30e0',
     runner: 'Sky Runner',
     tank: 'Tank Arena',
     pong: 'Pixel Pong',
@@ -29,13 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
 const headerDescriptions = {
-  top: '\u5144\u59b9\u3067\u904b\u55b6\u3059\u308b\u6d3b\u52d5\u62e0\u70b9',
-  profile: '\u7434\u97f3\u3068\u3057\u3093\u306e\u7d39\u4ecb',
-  reality: '\u914d\u4fe1\u6d3b\u52d5\u306e\u307e\u3068\u3081',
+  profile: 'Profile',
+  reality: 'Activities',
+  journey: 'Journey',
   youtube: '\u52d5\u753b\u6d3b\u52d5\u306e\u6848\u5185',
-  support: '\u30dd\u30a4\u30f3\u30c8\u3068\u7279\u5178\u4e00\u89a7',
-  minigame: '\u6c17\u8efd\u306b\u904a\u3079\u308b\u30b3\u30fc\u30ca\u30fc',
-  gallery: '\u5199\u771f\u30fbFA\u30fb\u8cc7\u6599\u96c6',
+  support: 'Rewards',
+  minigame: 'Mini Game',
+  gallery: 'Gallery',
   news: '\u66f4\u65b0\u60c5\u5831\u307e\u3068\u3081',
   links: '\u5916\u90e8\u30ea\u30f3\u30af\u4e00\u89a7'
 };
@@ -58,11 +59,9 @@ const headerDescriptions = {
     { key: 'top', href: siteRoot.href, label: labels.top },
     { key: 'profile', href: new URL('profile/', siteRoot).href, label: labels.profile },
     { key: 'reality', href: new URL('reality/', siteRoot).href, label: labels.reality },
-    { key: 'youtube', href: new URL('youtube/', siteRoot).href, label: labels.youtube },
+    { key: 'journey', href: new URL('journey/', siteRoot).href, label: labels.journey },
     { key: 'support', href: new URL('support/', siteRoot).href, label: labels.support },
     { key: 'gallery', href: new URL('gallery/', siteRoot).href, label: labels.gallery },
-    { key: 'news', href: new URL('news/', siteRoot).href, label: labels.news },
-    { key: 'links', href: new URL('links/', siteRoot).href, label: labels.links },
     { key: 'minigame', href: new URL('minigame/', siteRoot).href, label: labels.minigame }
   ];
 
@@ -75,13 +74,14 @@ const headerDescriptions = {
   const brand = document.createElement('a');
   brand.className = 'site-brand';
   brand.href = siteRoot.href;
+  const headerDescription = headerDescriptions[currentSection];
   brand.innerHTML = `
     <span class="site-brand__mark" aria-hidden="true">
       <img class="site-brand__icon" src="${new URL('favicon.ico', siteRoot).href}" alt="" />
     </span>
     <span class="site-brand__text">
       <span class="site-brand__title">Sanson Activity Journal</span>
-      <span class="site-brand__sub">${headerDescriptions[currentSection] || '\u9759\u304b\u306a\u914d\u4fe1\u3068\u5275\u4f5c\u306e\u305f\u3081\u306e\u30b5\u30a4\u30c8'}</span>
+      ${headerDescription ? `<span class="site-brand__sub">${headerDescription}</span>` : ''}
     </span>
   `;
 
@@ -219,9 +219,9 @@ const headerDescriptions = {
           <h2>\u3088\u304f\u898b\u308b\u30da\u30fc\u30b8</h2>
           <ul class="footer-links">
             <li><a href="${new URL('gallery/', siteRoot).href}">\u30ae\u30e3\u30e9\u30ea\u30fc</a></li>
-            <li><a href="${new URL('reality/', siteRoot).href}">Reality</a></li>
+            <li><a href="${new URL('reality/', siteRoot).href}">\u6d3b\u52d5\u7d39\u4ecb</a></li>
+            <li><a href="${new URL('journey/', siteRoot).href}">\u6d3b\u52d5\u5e74\u8868</a></li>
             <li><a href="${new URL('support/', siteRoot).href}">\u30b5\u30dd\u8fd4</a></li>
-            <li><a href="${new URL('links/', siteRoot).href}">\u30ea\u30f3\u30af\u96c6</a></li>
           </ul>
         </section>
       </div>
