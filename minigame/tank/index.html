@@ -16,25 +16,39 @@
     <section class="page-hero">
       <span class="eyebrow">Tank Arena</span>
       <h1>避けて撃つ、見下ろし型タンクバトル</h1>
-      <p class="lead">矢印キーで移動、スペースキーで発射。スマホではスタート後に画面タップで攻撃できます。被弾を避けながらスコアを伸ばしてください。</p>
+      <p class="lead">矢印キーで移動、スペースキーで発射。スマホでは方向ボタンで移動し、発射ボタンで攻撃できます。被弾を避けながらスコアを伸ばしてください。</p>
     </section>
     <section class="page-section game-shell">
       <div class="hud">
         <p id="tank-score">Score: 0 / HP: 5</p>
         <div class="button-row">
-          <button id="tank-start" type="button">スタート / リスタート</button>
+          <button id="tank-start" type="button">スタート</button>
           <a class="button-link secondary" href="../">ゲーム一覧へ戻る</a>
         </div>
       </div>
+      <div class="game-instructions">
+        <article>
+          <span>PC</span>
+          <p>矢印キーで移動、スペースキーで発射</p>
+        </article>
+        <article>
+          <span>スマホ</span>
+          <p>方向ボタンで移動、発射ボタンで攻撃</p>
+        </article>
+        <article>
+          <span>目標</span>
+          <p>敵を避けながらスコアを伸ばす</p>
+        </article>
+      </div>
       <canvas id="tank-canvas" class="game-canvas" width="900" height="520"></canvas>
-      <div class="touch-controls five">
+      <div class="touch-controls tank-controls">
         <button data-action="up" type="button">上</button>
         <button data-action="down" type="button">下</button>
         <button data-action="left" type="button">左</button>
         <button data-action="right" type="button">右</button>
         <button data-action="fire" type="button">発射</button>
       </div>
-      <p class="game-note" id="tank-status">ゲームを準備しています。</p>
+      <p class="game-note" id="tank-status">スタートを押すとバトルが始まります。</p>
     </section>
   </main>
   <script src="../../assets/js/main.js"></script>

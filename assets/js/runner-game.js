@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     player.grounded = true;
     running = true;
     lastTime = 0;
+    button.textContent = 'リトライ';
     statusText.textContent = 'ジャンプしてコースを駆け抜けよう。';
     updateScore();
     cancelAnimationFrame(animationId);
@@ -183,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function gameOver(message) {
     running = false;
     cancelAnimationFrame(animationId);
+    button.textContent = 'リトライ';
     statusText.textContent = `${message} スコア ${score}。リスタートでもう一度遊べます。`;
   }
 
@@ -215,5 +217,5 @@ document.addEventListener('DOMContentLoaded', () => {
   canvas.addEventListener('pointerdown', jump);
 
   player.y = groundY - player.height;
-  resetGame();
+  render();
 });

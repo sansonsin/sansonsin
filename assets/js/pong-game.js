@@ -20,16 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
   let player;
   let cpu;
 
-  function resetGame() {
+  function setupGame() {
     playerScore = 0;
     cpuScore = 0;
     player = { x: 26, y: canvas.height / 2 - 48, width: 14, height: 96, speed: 6 };
     cpu = { x: canvas.width - 40, y: canvas.height / 2 - 48, width: 14, height: 96, speed: 4.8 };
     resetBall(Math.random() > 0.5 ? 1 : -1);
+    updateScore();
+  }
+
+  function resetGame() {
+    setupGame();
     running = true;
     lastTime = 0;
+    button.textContent = 'リトライ';
     statusText.textContent = 'ラリー開始。5点先取で勝利です。';
-    updateScore();
     cancelAnimationFrame(animationId);
     animationId = requestAnimationFrame(loop);
   }
@@ -111,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (playerScore >= 5 || cpuScore >= 5) {
       running = false;
       cancelAnimationFrame(animationId);
+      button.textContent = 'リトライ';
       statusText.textContent =
         playerScore > cpuScore
           ? '勝利です。リスタートでもう一度挑戦できます。'
@@ -178,5 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  resetGame();
+  setupGame();
+  render();
 });

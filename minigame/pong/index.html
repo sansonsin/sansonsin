@@ -16,22 +16,36 @@
     <section class="page-hero">
       <span class="eyebrow">Pixel Pong</span>
       <h1>シンプルで気持ちいい、王道ピンポンゲーム</h1>
-      <p class="lead">上矢印と下矢印でラケットを動かし、CPUより先に5点を取ると勝利です。テンポよく遊べるよう、すぐ再戦できる作りにしています。</p>
+      <p class="lead">上矢印と下矢印でラケットを動かし、CPUより先に5点を取ると勝利です。スマホでは上下ボタンを押し続けて操作できます。</p>
     </section>
     <section class="page-section game-shell">
       <div class="hud">
         <p id="pong-score">Player 0 - 0 CPU</p>
         <div class="button-row">
-          <button id="pong-start" type="button">スタート / リスタート</button>
+          <button id="pong-start" type="button">スタート</button>
           <a class="button-link secondary" href="../">ゲーム一覧へ戻る</a>
         </div>
+      </div>
+      <div class="game-instructions">
+        <article>
+          <span>PC</span>
+          <p>上矢印 / 下矢印でラケット移動</p>
+        </article>
+        <article>
+          <span>スマホ</span>
+          <p>上へ / 下へボタンを押し続ける</p>
+        </article>
+        <article>
+          <span>勝利条件</span>
+          <p>CPUより先に5点を取る</p>
+        </article>
       </div>
       <canvas id="pong-canvas" class="game-canvas" width="900" height="500"></canvas>
       <div class="touch-controls two">
         <button data-pong="up" type="button">上へ</button>
         <button data-pong="down" type="button">下へ</button>
       </div>
-      <p class="game-note" id="pong-status">ゲームを準備しています。</p>
+      <p class="game-note" id="pong-status">スタートを押すとラリーが始まります。</p>
     </section>
   </main>
   <script src="../../assets/js/main.js"></script>

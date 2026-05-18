@@ -21,16 +21,22 @@ document.addEventListener('DOMContentLoaded', () => {
   let bullets = [];
   let enemies = [];
 
-  function resetGame() {
+  function setupGame() {
     player = { x: canvas.width / 2, y: canvas.height / 2, angle: 0, hp: 5, speed: 3.2 };
     bullets = [];
     enemies = [];
     score = 0;
     cooldown = 0;
     spawnTimer = 0;
-    running = true;
-    statusText.textContent = '敵をかわして撃ち返そう。';
     updateHud();
+  }
+
+  function resetGame() {
+    setupGame();
+    running = true;
+    lastTime = 0;
+    button.textContent = 'リトライ';
+    statusText.textContent = '敵をかわして撃ち返そう。';
     cancelAnimationFrame(animationId);
     animationId = requestAnimationFrame(loop);
   }
@@ -208,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function gameOver(message) {
     running = false;
     cancelAnimationFrame(animationId);
+    button.textContent = 'リトライ';
     statusText.textContent = `${message} スコア ${score}。リスタートで再戦できます。`;
   }
 
@@ -249,5 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   canvas.addEventListener('pointerdown', fire);
 
-  resetGame();
+  setupGame();
+  render();
 });

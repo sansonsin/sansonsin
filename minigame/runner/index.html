@@ -16,22 +16,36 @@
     <section class="page-hero">
       <span class="eyebrow">Sky Runner</span>
       <h1>空色のコースを駆け抜けるランゲーム</h1>
-      <p class="lead">スペースキーか上矢印でジャンプ。障害物を避けながら、浮かぶコインを拾ってスコアを伸ばしてください。スマホでは画面タップでも跳べます。</p>
+      <p class="lead">スペースキーか上矢印でジャンプ。障害物を避けながら、浮かぶコインを拾ってスコアを伸ばしてください。スマホでは大きなジャンプボタンで操作できます。</p>
     </section>
     <section class="page-section game-shell">
       <div class="hud">
         <p id="runner-score">Score: 0</p>
         <div class="button-row">
-          <button id="runner-start" type="button">スタート / リスタート</button>
+          <button id="runner-start" type="button">スタート</button>
           <a class="button-link secondary" href="../">ゲーム一覧へ戻る</a>
         </div>
+      </div>
+      <div class="game-instructions">
+        <article>
+          <span>PC</span>
+          <p>スペースキー / 上矢印でジャンプ</p>
+        </article>
+        <article>
+          <span>スマホ</span>
+          <p>ジャンプボタン、またはゲーム画面をタップ</p>
+        </article>
+        <article>
+          <span>リトライ</span>
+          <p>スタートボタンからすぐに再挑戦</p>
+        </article>
       </div>
       <canvas id="runner-canvas" class="game-canvas" width="900" height="420"></canvas>
       <div class="touch-controls two">
         <button id="runner-jump" type="button">ジャンプ</button>
         <button id="runner-restart-mobile" type="button">リスタート</button>
       </div>
-      <p class="game-note" id="runner-status">ゲームを準備しています。</p>
+      <p class="game-note" id="runner-status">スタートを押すとゲームが始まります。</p>
     </section>
   </main>
   <script src="../../assets/js/main.js"></script>
