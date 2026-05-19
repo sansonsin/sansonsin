@@ -2182,6 +2182,14 @@ button,
     linear-gradient(180deg, rgba(16, 26, 77, 0.98), rgba(9, 17, 42, 0.98));
 }
 
+body[data-section="minigame"] .page-main {
+  min-height: calc(100svh - 82px - 190px);
+}
+
+body[data-section="minigame"] .choice-grid {
+  align-content: start;
+}
+
 .top-main-visual {
   position: relative;
   overflow: hidden;
