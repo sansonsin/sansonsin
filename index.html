@@ -13,50 +13,21 @@
     <nav></nav>
   </header>
   <main>
-    <section class="page-hero">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Sibling Activity Site</span>
-          <h1><span class="hero-title-line">さんそん琴音と</span><span class="hero-title-line">さんそんしんの、</span><span class="hero-title-line">静かで見やすい</span><span class="hero-title-line">活動拠点</span></h1>
-          <p class="lead">配信、創作、更新情報、外部リンクをひとつにまとめた活動拠点です。人物紹介や役割の詳しい内容は、さんそんの紹介に集約しています。</p>
-          <div class="hero-actions">
-            <a class="button" href="gallery/">ギャラリーを見る</a>
-            <a class="button secondary" href="profile/">さんそんの紹介へ</a>
-          </div>
-        </div>
-        <div class="hero-panel">
-          <div class="hero-note">
-            <strong>まず知る</strong>
-            <p>人物・キャラクター・兄妹の役割は、さんそんの紹介でまとめて確認できます。</p>
-          </div>
-          <div class="hero-note">
-            <strong>活動を見る</strong>
-            <p>配信や創作の入口は、活動紹介・ギャラリー・TOPのリンク集からたどれます。</p>
-          </div>
-          <div class="metrics">
-            <div class="metric">
-              <strong>3本柱</strong>
-              <span>配信・動画・創作資料</span>
-            </div>
-            <div class="metric">
-              <strong>Profile</strong>
-              <span>人物紹介は専用ページへ集約</span>
-            </div>
-            <div class="metric">
-              <strong>見やすさ重視</strong>
-              <span>スマホでも読みやすい余白設計</span>
-            </div>
-          </div>
-        </div>
+    <section class="top-title" aria-labelledby="top-title">
+      <span class="eyebrow">Sanson Activity Site</span>
+      <h1 id="top-title">さんそんの活動記録</h1>
+      <div class="hero-actions">
+        <a class="button" href="reality/">活動紹介</a>
+        <a class="button secondary" href="gallery/">ギャラリー</a>
+        <a class="button secondary" href="profile/">さんそんの紹介</a>
       </div>
     </section>
 
-    <section class="page-section top-overview-grid">
+    <section class="page-section top-feature-grid">
       <section class="panel top-news-panel" id="top-news" aria-labelledby="top-news-title">
         <div class="section-heading compact">
           <div>
             <h2 id="top-news-title">お知らせ</h2>
-            <p>最近の更新を短くまとめています。</p>
           </div>
         </div>
         <ol class="top-news-list">
@@ -75,11 +46,21 @@
         </ol>
       </section>
 
+      <article class="page-card top-profile-card">
+        <span class="card-kicker">Profile</span>
+        <h2>さんそんの紹介</h2>
+        <p>人物紹介、兄妹の役割、世界観まわりはこちらへ。</p>
+        <div class="hero-actions">
+          <a class="button secondary" href="profile/">紹介を見る</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="page-section">
       <section class="panel top-links-panel" id="top-links" aria-labelledby="top-links-title">
         <div class="section-heading compact">
           <div>
             <h2 id="top-links-title">リンク集</h2>
-            <p>配信・SNS・外部サービスへの入口です。</p>
           </div>
         </div>
         <div class="link-grid">
@@ -164,66 +145,6 @@
           </article>
         </div>
       </section>
-    </section>
-
-    <section class="page-section">
-      <div class="section-heading">
-        <div>
-          <h2>まず見てほしいページ</h2>
-          <p>初見でも迷いにくいように、主要コンテンツを入口として並べています。</p>
-        </div>
-      </div>
-      <div class="card-grid three">
-        <article class="page-card">
-          <span class="card-kicker">紹介</span>
-          <h3>さんそんの紹介</h3>
-          <p>琴音としんのキャラクター、活動スタイル、兄妹の役割をまとめています。全体像を知りたい人向けのページです。</p>
-          <div class="hero-actions">
-            <a class="button secondary" href="profile/">紹介ページへ</a>
-          </div>
-        </article>
-        <article class="page-card">
-          <span class="card-kicker">配信</span>
-          <h3>活動紹介</h3>
-          <p>REALITYを中心に、配信活動や関連情報をまとめています。どこで何を見られるかを確認できます。</p>
-          <div class="hero-actions">
-            <a class="button secondary" href="reality/">活動紹介へ</a>
-          </div>
-        </article>
-        <article class="page-card">
-          <span class="card-kicker">創作</span>
-          <h3>ギャラリー</h3>
-          <p>写真、ファンアート、資料集をまとめた創作入口です。作品やビジュアルを見たい人向けのページです。</p>
-          <div class="hero-actions">
-            <a class="button secondary" href="gallery/">ギャラリーへ</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="page-section">
-      <article class="page-card">
-        <span class="card-kicker">Profile</span>
-        <h2>人物紹介は「さんそんの紹介」へ</h2>
-        <p>兄妹の役割、キャラクター説明、世界観まわりの情報はプロフィールページにまとめました。TOPでは更新情報と主要導線を中心にしています。</p>
-        <div class="hero-actions">
-          <a class="button secondary" href="profile/">さんそんの紹介を見る</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="page-section">
-      <div class="section-heading">
-        <div>
-          <h2>サイトの使い方</h2>
-          <p>目的別にたどりやすい順番で案内しています。</p>
-        </div>
-      </div>
-      <ul class="page-list">
-        <li><strong>全体像を知りたい</strong><br /><a href="profile/">さんそんの紹介</a> から見ると、キャラクターや役割が自然につかめます。</li>
-        <li><strong>配信を追いたい</strong><br /><a href="reality/">活動紹介</a> で配信の雰囲気を確認し、<a href="#top-links">TOPのリンク集</a> から各サービスに移動できます。</li>
-        <li><strong>作品や資料を見たい</strong><br /><a href="gallery/">ギャラリー</a> に写真・ファンアート・資料集の入口をまとめています。</li>
-      </ul>
     </section>
   </main>
   <script src="assets/js/main.js"></script>
