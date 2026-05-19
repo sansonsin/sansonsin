@@ -341,6 +341,7 @@ button {
 .hero-copy {
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -379,6 +380,12 @@ button {
   margin-top: 1rem;
   font-size: clamp(2rem, 4.4vw, 3.8rem);
   letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
+  line-break: anywhere;
+}
+
+.hero-title-line {
+  display: inline;
 }
 
 .lead {
@@ -386,6 +393,8 @@ button {
   max-width: 42rem;
   color: var(--text-soft);
   font-size: clamp(1rem, 2vw, 1.12rem);
+  overflow-wrap: anywhere;
+  line-break: anywhere;
 }
 
 .hero-actions,
@@ -1259,6 +1268,8 @@ body[data-section="support"] .page-hero {
 
 .game-canvas {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   height: auto;
   display: block;
   margin: 1rem 0;
@@ -1609,6 +1620,26 @@ body[data-section="support"] .page-hero {
     padding: 1.35rem;
   }
 
+  .page-hero h1 {
+    font-size: clamp(1.85rem, 8vw, 2.25rem);
+  }
+
+  .hero-title-line {
+    display: block;
+  }
+
+  .lead {
+    font-size: 0.98rem;
+  }
+
+  .page-hero,
+  .page-card,
+  .hero-note,
+  .panel {
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+
   body[data-section="top"] .page-main {
     padding-top: 8px;
   }
@@ -1689,6 +1720,8 @@ body[data-section="support"] .page-hero {
   }
 
   .game-canvas {
+    aspect-ratio: 16 / 9;
+    height: auto;
     margin: 0.8rem 0;
     border-radius: 10px;
   }
@@ -1705,7 +1738,7 @@ body[data-section="support"] .page-hero {
 
 @media (max-width: 540px) {
   :root {
-    --container: min(100vw - 20px, 1120px);
+    --container: min(1120px, calc(100vw - 20px));
   }
 
   .site-brand__sub {
